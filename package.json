@@ -1,0 +1,17 @@
+{
+  "name": "ifenzi-beauty-salon",
+  "version": "1.0.0",
+  "description": "Ifenzi Beauty Salon — full website + backend + admin dashboard",
+  "main": "server.js",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0"
+  }
+}
