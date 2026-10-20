@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overview | Ifenzi Admin</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="admin-shell">
+  <div class="admin-sidebar">
+  <div class="logo"><img src="images/logo.png" alt="Ifenzi Beauty Salon logo" style="height:28px;width:auto;display:block"><span>Ifenzi Admin</span></div>
+  <a href="index.html" class="active">Overview</a>
+<a href="services.html">Services</a>
+<a href="products.html">Products</a>
+  <a href="gallery.html">Gallery</a>
+<a href="appointments.html">Appointments</a>
+<a href="orders.html">Orders</a>
+<a href="messages.html">Messages</a>
+<a href="reviews.html">Reviews</a>
+<a href="settings.html">Settings</a>
+  <a href="#" class="logout-btn" onclick="logout()">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+    Log out
+  </a>
+</div>
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <h1 class="font-display">Overview</h1>
+      <span style="font-size:.82rem;color:var(--ink-soft)">Logged in as <b id="adminUsername">&hellip;</b></span>
+    </div>
+    
+<div class="stat-grid">
+  <div class="stat-card"><div class="num" id="statAppointments">&hellip;</div><div class="label">Pending appointments</div></div>
+  <div class="stat-card"><div class="num" id="statOrders">&hellip;</div><div class="label">Pending orders</div></div>
+  <div class="stat-card"><div class="num" id="statRevenue">&hellip;</div><div class="label">Revenue (paid + completed)</div></div>
+  <div class="stat-card"><div class="num" id="statMessages">&hellip;</div><div class="label">Unread messages</div></div>
+</div>
+
+<div class="grid grid-2">
+  <div>
+    <h3 style="margin-bottom:12px">Recent Appointments</h3>
+    <div class="table-wrap">
+      <table class="admin-table">
+        <thead><tr><th>Customer</th><th>Service</th><th>When</th><th>Status</th></tr></thead>
+        <tbody id="recentAppts"><tr><td colspan="4">Loading&hellip;</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+  <div>
+    <h3 style="margin-bottom:12px">Recent Orders</h3>
+    <div class="table-wrap">
+      <table class="admin-table">
+        <thead><tr><th>Customer</th><th>Total</th><th>Status</th></tr></thead>
+        <tbody id="recentOrders"><tr><td colspan="3">Loading&hellip;</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+<script src="js/main.js"></script>
+<script>requireAuth();loadOverview();</script>
+</body>
+</html>

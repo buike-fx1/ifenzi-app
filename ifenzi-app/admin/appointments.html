@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appointments | Ifenzi Admin</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="admin-shell">
+  <div class="admin-sidebar">
+  <div class="logo"><img src="images/logo.png" alt="Ifenzi Beauty Salon logo" style="height:28px;width:auto;display:block"><span>Ifenzi Admin</span></div>
+  <a href="index.html">Overview</a>
+<a href="services.html">Services</a>
+<a href="products.html">Products</a>
+  <a href="gallery.html">Gallery</a>
+<a href="appointments.html" class="active">Appointments</a>
+<a href="orders.html">Orders</a>
+<a href="messages.html">Messages</a>
+<a href="reviews.html">Reviews</a>
+<a href="settings.html">Settings</a>
+  <a href="#" class="logout-btn" onclick="logout()">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+    Log out
+  </a>
+</div>
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <h1 class="font-display">Appointments</h1>
+      <span style="font-size:.82rem;color:var(--ink-soft)">Logged in as <b id="adminUsername">&hellip;</b></span>
+    </div>
+    
+<div class="table-wrap">
+  <table class="admin-table">
+    <thead><tr><th>Customer</th><th>Service</th><th>When</th><th>Status</th><th>Actions</th></tr></thead>
+    <tbody id="apptBody"><tr><td colspan="5">Loading&hellip;</td></tr></tbody>
+  </table>
+</div>
+
+  </div>
+</div>
+<script src="js/main.js"></script>
+<script>requireAuth();loadAppointments();</script>
+</body>
+</html>

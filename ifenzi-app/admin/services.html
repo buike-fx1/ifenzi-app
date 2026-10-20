@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Ifenzi Admin</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="admin-shell">
+  <div class="admin-sidebar">
+  <div class="logo"><img src="images/logo.png" alt="Ifenzi Beauty Salon logo" style="height:28px;width:auto;display:block"><span>Ifenzi Admin</span></div>
+  <a href="index.html">Overview</a>
+<a href="services.html" class="active">Services</a>
+<a href="products.html">Products</a>
+  <a href="gallery.html">Gallery</a>
+<a href="appointments.html">Appointments</a>
+<a href="orders.html">Orders</a>
+<a href="messages.html">Messages</a>
+<a href="reviews.html">Reviews</a>
+<a href="settings.html">Settings</a>
+  <a href="#" class="logout-btn" onclick="logout()">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+    Log out
+  </a>
+</div>
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <h1 class="font-display">Services</h1>
+      <span style="font-size:.82rem;color:var(--ink-soft)">Logged in as <b id="adminUsername">&hellip;</b></span>
+    </div>
+    
+<div style="display:flex;justify-content:flex-end;margin-bottom:16px">
+  <button class="btn btn-primary" onclick="newService()">+ Add Service</button>
+</div>
+<div class="table-wrap">
+  <table class="admin-table">
+    <thead><tr><th></th><th>Name</th><th>Category</th><th>Price</th><th>Duration</th><th>Status</th><th>Actions</th></tr></thead>
+    <tbody id="servicesBody"><tr><td colspan="7">Loading&hellip;</td></tr></tbody>
+  </table>
+</div>
+
+<div class="modal-overlay" id="serviceModal">
+  <div class="modal-box">
+    <div class="modal-head"><span class="font-display" style="font-size:1.2rem" id="serviceModalTitle">Add Service</span>
+      <button class="btn-icon" onclick="closeModal('serviceModal')">&times;</button>
+    </div>
+    <form class="stacked" onsubmit="return saveService(event)">
+      <input type="hidden" id="serviceId">
+      <input required class="field" id="serviceName" placeholder="Service name">
+      <input required class="field" id="serviceCategory" placeholder="Category (e.g. Hair, Nails, Makeup)">
+      <input type="number" class="field" id="servicePrice" placeholder="Base price (numbers only, e.g. 8000)">
+      <input required class="field" id="servicePriceLabel" placeholder="Price label shown to customers (e.g. 8,000+)">
+      <input required class="field" id="serviceDuration" placeholder="Duration (e.g. 45 min)">
+      <input class="field" id="serviceImage" placeholder="Image link (optional) — paste a photo address">
+      <div class="hint">Right-click a photo online, choose “Copy image address”, and paste it here.</div>
+      <textarea class="field" id="serviceDescription" rows="3" placeholder="Description"></textarea>
+      <label style="display:flex;align-items:center;gap:8px;font-size:.88rem"><input type="checkbox" id="serviceActive"> Active (visible on the website)</label>
+      <button type="submit" class="btn btn-primary" style="justify-content:center">Save Service</button>
+    </form>
+  </div>
+</div>
+
+  </div>
+</div>
+<script src="js/main.js"></script>
+<script>requireAuth();loadServices();</script>
+</body>
+</html>
